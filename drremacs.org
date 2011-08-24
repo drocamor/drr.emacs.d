@@ -4,6 +4,8 @@ I got tired of having a giant .emacs file that was incomprehensible and then I g
 
 This is a dumb idea, but I'm doing it anyways!
 
+Now, github can't seem to render the .org file correctly, so I will export it to HTML to be the readme. Then maybe it will do syntax highlighting correctly. Who knows. 
+
 * Installing packages and features
 ** Debian Packages
    I wanted to use fancy package.el tricks, but this actually causes shitloads of problems. Best to stick with debian packages. So to make things cool make sure that these are installed:

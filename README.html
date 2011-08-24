@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>drremacs</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-08-24 08:53:26 EDT"/>
+<meta name="author" content="David Rocamora"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">drremacs</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 David Rocamora's literate Emacs configuration </a></li>
+<li><a href="#sec-2">2 Installing packages and features </a>
+<ul>
+<li><a href="#sec-2_1">2.1 Debian Packages </a></li>
+<li><a href="#sec-2_2">2.2 Emacs packages that aren't in Debian </a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3 Settings </a>
+<ul>
+<li><a href="#sec-3_1">3.1 Keybindings </a></li>
+<li><a href="#sec-3_2">3.2 Appearance </a></li>
+<li><a href="#sec-3_3">3.3 Behavior </a>
+<ul>
+<li><a href="#sec-3_3_1">3.3.1 Backups </a></li>
+</ul>
+</li>
+<li><a href="#sec-3_4">3.4 Custom set variables </a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 Mail </a></li>
+<li><a href="#sec-5">5 Modes </a>
+<ul>
+<li><a href="#sec-5_1">5.1 org-mode </a>
+<ul>
+<li><a href="#sec-5_1_1">5.1.1 Papers and docs </a></li>
+<li><a href="#sec-5_1_2">5.1.2 Babel </a></li>
+<li><a href="#sec-5_1_3">5.1.3 Stupid org tricks </a></li>
+</ul>
+</li>
+<li><a href="#sec-5_2">5.2 ibuffer </a></li>
+<li><a href="#sec-5_3">5.3 ido </a></li>
+<li><a href="#sec-5_4">5.4 latex </a></li>
+<li><a href="#sec-5_5">5.5 mingus </a></li>
+<li><a href="#sec-5_6">5.6 twittering-mode </a></li>
+<li><a href="#sec-5_7">5.7 tramp </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> David Rocamora's literate Emacs configuration </h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+I got tired of having a giant .emacs file that was incomprehensible and then I got annoyed with having configuration split between a ton of different files. Having a giant org file seemed to be the solution. Let's see how it goes&hellip;
+</p>
+<p>
+This is a dumb idea, but I'm doing it anyways!
+</p>
+<p>
+Now, github can't seem to render the .org file correctly, so I will export it to HTML to be the readme. Then maybe it will do syntax highlighting correctly. Who knows. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Installing packages and features </h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2_1" class="outline-3">
+<h3 id="sec-2_1"><span class="section-number-3">2.1</span> Debian Packages </h3>
+<div class="outline-text-3" id="text-2_1">
+
+<p>I wanted to use fancy package.el tricks, but this actually causes shitloads of problems. Best to stick with debian packages. So to make things cool make sure that these are installed:
+</p>
+<ul>
+<li>
+magit
+</li>
+<li>
+notmuch
+</li>
+<li>
+puppet-el
+</li>
+<li>
+slime
+</li>
+<li>
+paredit-el
+</li>
+<li>
+emacs-goodies-el
+</li>
+<li>
+debian-el
+</li>
+<li>
+css-mode
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2_2" class="outline-3">
+<h3 id="sec-2_2"><span class="section-number-3">2.2</span> Emacs packages that aren't in Debian </h3>
+<div class="outline-text-3" id="text-2_2">
+
+<p>There's always stuff that I'd like to have but I can't get in Debian. So I store them in a folder ~/.emacs.d/elisp. Hopefully I am cloning remote git repositories so I can upgrade them easily.
+</p>
+
+
+<div class="org-src-container"><label class="org-src-name">package-load-path()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Update the load path and load whatever is in it
+</span>(<span style="color: #a020f0;">let</span> ((default-directory <span style="color: #8b2252;">"~/.emacs.d/elisp/"</span>))
+      (normal-top-level-add-to-load-path '(<span style="color: #8b2252;">"."</span>))
+      (normal-top-level-add-subdirs-to-load-path))
+</pre></div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Settings </h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+</div>
+
+<div id="outline-container-3_1" class="outline-3">
+<h3 id="sec-3_1"><span class="section-number-3">3.1</span> Keybindings </h3>
+<div class="outline-text-3" id="text-3_1">
+
+
+
+
+<div class="org-src-container"><label class="org-src-name">keybindings()</label><pre class="src src-emacs-lisp">
+(define-key global-map <span style="color: #8b2252;">"\C-x\C-b"</span> 'ibuffer)
+(define-key global-map <span style="color: #8b2252;">"\C-cm"</span> 'notmuch)
+(define-key global-map <span style="color: #8b2252;">"\C-cg"</span> 'magit-status)
+(define-key global-map <span style="color: #8b2252;">"\C-cl"</span> 'org-store-link)
+(define-key global-map <span style="color: #8b2252;">"\C-ca"</span> 'org-agenda)
+(define-key global-map <span style="color: #8b2252;">"\C-cb"</span> 'org-iswitchb)
+(define-key global-map <span style="color: #8b2252;">"\C-cr"</span> 'org-remember)
+(define-key global-map <span style="color: #8b2252;">"\C-cu"</span> 'mingus)
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3_2" class="outline-3">
+<h3 id="sec-3_2"><span class="section-number-3">3.2</span> Appearance </h3>
+<div class="outline-text-3" id="text-3_2">
+
+
+<p>
+I am sort of picky about how things look and I have yet to find an emacs theme that I am really satisfied with.
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">appearance()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">A slick theme
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">(require 'color-theme-github)
+</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Tool bar no, menu bar yes
+</span>(menu-bar-mode 1)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">system font
+</span>(setq font-use-system-font 1)
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3_3" class="outline-3">
+<h3 id="sec-3_3"><span class="section-number-3">3.3</span> Behavior </h3>
+<div class="outline-text-3" id="text-3_3">
+
+
+<p>
+These are a few things I set because I want things just so.
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">behavior()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Save my place in a file
+</span>(setq-default save-place t)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">All "yes or no" prompts are now "y or n"
+</span><span style="color: #b22222;">;</span><span style="color: #b22222;">(defalias 'yes-or-no-p 'y-or-n-p)
+</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Cua rectangles, but no new key commands
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">I hypothesize that this messes up my emacs, but it is too useful to get rid of
+</span>(cua-selection-mode t)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Browser, and no more startup message
+</span>(setq browse-url-generic-program <span style="color: #8b2252;">"google-chrome"</span>
+      browse-url-browser-function 'browse-url-generic
+      inhibit-startup-message t
+      visible-bell t)
+</pre></div>
+
+
+
+</div>
+
+<div id="outline-container-3_3_1" class="outline-4">
+<h4 id="sec-3_3_1"><span class="section-number-4">3.3.1</span> Backups </h4>
+<div class="outline-text-4" id="text-3_3_1">
+
+
+<p>
+I hate all those ~s getting mixed in with my files, but I need backups. Here's my solution (stolen from <a href="http://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files">here</a>)
+</p>
+
+
+<div class="org-src-container"><label class="org-src-name">backups()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Relocate backups
+</span>(setq backup-directory-alist `((<span style="color: #8b2252;">"."</span> . <span style="color: #8b2252;">"~/.emacs.d/backups"</span>)))
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Safely copy them
+</span>(setq backup-by-copying t)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Keep some old versions around
+</span>
+(setq delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
+</pre></div>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3_4" class="outline-3">
+<h3 id="sec-3_4"><span class="section-number-3">3.4</span> Custom set variables </h3>
+<div class="outline-text-3" id="text-3_4">
+
+
+<p>
+Based on the warning, the world will probably end because this is in an org file.
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">custom-set-variables()</label><pre class="src src-emacs-lisp">
+(custom-set-variables
+  <span style="color: #b22222;">;; </span><span style="color: #b22222;">custom-set-variables was added by Custom.
+</span>  <span style="color: #b22222;">;; </span><span style="color: #b22222;">If you edit it by hand, you could mess it up, so be careful.
+</span>  <span style="color: #b22222;">;; </span><span style="color: #b22222;">Your init file should contain only one such instance.
+</span>  <span style="color: #b22222;">;; </span><span style="color: #b22222;">If there is more than one, they won't work right.
+</span> '(org-agenda-custom-commands (quote ((<span style="color: #8b2252;">"d"</span> todo <span style="color: #8b2252;">"DELEGATED"</span> nil) (<span style="color: #8b2252;">"c"</span> todo <span style="color: #8b2252;">"DONE"</span> nil) (<span style="color: #8b2252;">"h"</span> todo <span style="color: #8b2252;">"HOLD"</span> nil) (<span style="color: #8b2252;">"W"</span> agenda <span style="color: #8b2252;">""</span> ((org-agenda-ndays 21))) (<span style="color: #8b2252;">"A"</span> agenda <span style="color: #8b2252;">""</span> ((org-agenda-skip-function (<span style="color: #a020f0;">lambda</span> nil (org-agenda-skip-entry-if (quote notregexp) <span style="color: #8b2252;">"\\=.*\\[#A\\]"</span>))) (org-agenda-ndays 1) (org-agenda-overriding-header <span style="color: #8b2252;">"Today's Priority #A tasks: "</span>))) (<span style="color: #8b2252;">"u"</span> alltodo <span style="color: #8b2252;">""</span> ((org-agenda-skip-function (<span style="color: #a020f0;">lambda</span> nil (org-agenda-skip-entry-if (quote scheduled) (quote deadline) (quote regexp) <span style="color: #8b2252;">"&lt;[</span><span style="color: #8b2252;">^</span><span style="color: #8b2252;">&gt;
+]+&gt;"</span>))) (org-agenda-overriding-header <span style="color: #8b2252;">"Unscheduled TODO entries: "</span>))))))
+ '(org-agenda-files (quote (<span style="color: #8b2252;">"~/Documents/org/todo.org"</span>)))
+ '(org-default-notes-file <span style="color: #8b2252;">"~/Documents/org/notes.org"</span>))
+</pre></div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Mail </h2>
+<div class="outline-text-2" id="text-4">
+
+<p>This probably doesn't need it's own section, but it has one
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">mail()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">We need a spell checker
+</span>(add-hook 'message-mode-hook 'flyspell-mode)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">Sign messages by default.
+</span>(add-hook 'message-setup-hook 'mml-secure-sign-pgpmime)
+
+(<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">notmuch-address</span>)
+(setq notmuch-address-command <span style="color: #8b2252;">"~/bin/addrlookup"</span>)
+(notmuch-address-message-insinuate)
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Modes </h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5_1" class="outline-3">
+<h3 id="sec-5_1"><span class="section-number-3">5.1</span> org-mode </h3>
+<div class="outline-text-3" id="text-5_1">
+
+<p>I do a lot of work in org-mode. It is really the reason I use emacs.
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">org-mode-important()</label><pre class="src src-emacs-lisp">
+(setq org-log-done '(state)
+      org-todo-keywords
+      '((sequence <span style="color: #8b2252;">"TODO(t)"</span> <span style="color: #8b2252;">"HOLD(h)"</span> <span style="color: #8b2252;">"|"</span> <span style="color: #8b2252;">"DONE(d)"</span> <span style="color: #8b2252;">"DELEGATED(e)"</span>))
+      org-use-fast-todo-selection t
+      org-directory <span style="color: #8b2252;">"~/Documents/org"</span>
+      org-default-notes-file (concat org-directory <span style="color: #8b2252;">"/notes.org"</span>)
+      org-log-done t)
+
+(org-remember-insinuate)
+
+(setq org-remember-templates
+      '((<span style="color: #8b2252;">"Todo"</span> ?t <span style="color: #8b2252;">"* TODO %?\n  %i\n  %a"</span> <span style="color: #8b2252;">"~/Documents/org/todo.org"</span> <span style="color: #8b2252;">"Tasks"</span>)
+        (<span style="color: #8b2252;">"Notes"</span> ?n <span style="color: #8b2252;">"* %U %?\n\n  %i\n  %a"</span> <span style="color: #8b2252;">"~/Documents/org/notes.org"</span>)
+        (<span style="color: #8b2252;">"Journal"</span> ?j <span style="color: #8b2252;">"* %t - %^{Title}\n  %i\n  %?"</span> <span style="color: #8b2252;">"~/Documents/org/journal.org"</span> <span style="color: #8b2252;">"Journal"</span>)))
+</pre></div>
+
+
+
+
+</div>
+
+<div id="outline-container-5_1_1" class="outline-4">
+<h4 id="sec-5_1_1"><span class="section-number-4">5.1.1</span> Papers and docs </h4>
+<div class="outline-text-4" id="text-5_1_1">
+
+<p>I want to be able to use org to write and documents, etc. Not sure if this will work
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">org-mode-papers()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">'djcb-org-article' for export org documents to the LaTex 'article', using
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">XeTeX and some fancy fonts; requires XeTeX (see org-latex-to-pdf-process)
+</span>(<span style="color: #a020f0;">unless</span> (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">You must add this to the top of the org file:
+</span>
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">#+LaTeX_CLASS: drr-org-article
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">#+TITLE: My little document
+</span>
+
+(add-to-list 'org-export-latex-classes
+             '(<span style="color: #8b2252;">"drr-org-article"</span>
+               <span style="color: #8b2252;">"\\documentclass[letterpaper]{article}
+    \\usepackage[T1]{fontenc}
+    \\usepackage{fontspec}
+    \\usepackage{graphicx} 
+    \\defaultfontfeatures{Mapping=tex-text}
+    \\setmainfont{Linux Libertine O}
+    \\setsansfont{League Gothic}
+    \\setmonofont[Scale=0.8]{Inconsolata}
+    \\usepackage{geometry}
+    \\geometry{letterpaper, textwidth=6.5in, textheight=10in,
+                marginparsep=7pt, marginparwidth=.6in}
+    \\pagestyle{empty}
+    \\title{}
+          [NO-DEFAULT-PACKAGES]
+          [NO-PACKAGES]"</span>
+               (<span style="color: #8b2252;">"\\section{%s}"</span> . <span style="color: #8b2252;">"\\section*{%s}"</span>)
+               (<span style="color: #8b2252;">"\\subsection{%s}"</span> . <span style="color: #8b2252;">"\\subsection*{%s}"</span>)
+               (<span style="color: #8b2252;">"\\subsubsection{%s}"</span> . <span style="color: #8b2252;">"\\subsubsection*{%s}"</span>)
+               (<span style="color: #8b2252;">"\\paragraph{%s}"</span> . <span style="color: #8b2252;">"\\paragraph*{%s}"</span>)
+               (<span style="color: #8b2252;">"\\subparagraph{%s}"</span> . <span style="color: #8b2252;">"\\subparagraph*{%s}"</span>)))
+(setq org-latex-to-pdf-process 
+      '(<span style="color: #8b2252;">"xelatex -interaction nonstopmode %s"</span>
+        <span style="color: #8b2252;">"xelatex -interaction nonstopmode %s"</span>)) <span style="color: #b22222;">;; </span><span style="color: #b22222;">for multiple passes
+</span></pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_1_2" class="outline-4">
+<h4 id="sec-5_1_2"><span class="section-number-4">5.1.2</span> Babel </h4>
+<div class="outline-text-4" id="text-5_1_2">
+
+
+
+
+<div class="org-src-container"><label class="org-src-name">org-babel()</label><pre class="src src-emacs-lisp">
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((ditaa . t)
+   (dot . t)
+   (emacs-lisp . t)
+   (gnuplot . t)
+   (python . t)
+   (ruby . t)
+   (screen . nil)
+   (sh . t)))
+
+(setq org-src-fontify-natively t)
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_1_3" class="outline-4">
+<h4 id="sec-5_1_3"><span class="section-number-4">5.1.3</span> Stupid org tricks </h4>
+<div class="outline-text-4" id="text-5_1_3">
+
+
+
+
+<div class="org-src-container"><label class="org-src-name">org-mode-toys()</label><pre class="src src-emacs-lisp">
+(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">org-insert-screenshot</span> ()
+  <span style="color: #8b2252;">"Take a screenshot into a unique-named file in the current buffer file 
+directory and insert a link to this file."</span>
+  (interactive)
+  (setq filename
+        (concat
+         (make-temp-name
+          (file-name-directory (buffer-file-name))) <span style="color: #8b2252;">".jpg"</span>))
+  (call-process <span style="color: #8b2252;">"import"</span> nil nil nil filename)
+  (insert (concat <span style="color: #8b2252;">"[["</span> filename <span style="color: #8b2252;">"]]"</span>))
+  (org-display-inline-images))
+</pre></div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5_2" class="outline-3">
+<h3 id="sec-5_2"><span class="section-number-3">5.2</span> ibuffer </h3>
+<div class="outline-text-3" id="text-5_2">
+
+
+<p>
+This is a much nicer buffer interface
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">appearance()</label><pre class="src src-emacs-lisp">
+(<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">ibuffer</span>)
+(setq ibuffer-saved-filter-groups
+      (quote ((<span style="color: #8b2252;">"default"</span>      
+               (<span style="color: #8b2252;">"Org"</span> 
+                (mode . org-mode))  
+               (<span style="color: #8b2252;">"Mail"</span>
+                (or
+                 (mode . notmuch-show)
+                 (mode . notmuch-search)
+                 (mode . notmuch-hello)))
+               (<span style="color: #8b2252;">"Programming"</span>
+                (or
+                 (mode . c-mode)
+                 (mode . perl-mode)
+                 (mode . python-mode)
+                 (mode . emacs-lisp-mode)))
+               (<span style="color: #8b2252;">"Puppet"</span>
+                (or 
+                 (mode . puppet-mode)
+                 (name . <span style="color: #8b2252;">"^.*\\.erb$"</span>)))
+               (<span style="color: #8b2252;">"Magit"</span>
+                (name . <span style="color: #8b2252;">"^\\*magit.*"</span>))))))
+
+(add-hook 'ibuffer-mode-hook
+          (<span style="color: #a020f0;">lambda</span> ()
+            (ibuffer-switch-to-saved-filter-groups <span style="color: #8b2252;">"default"</span>)))
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_3" class="outline-3">
+<h3 id="sec-5_3"><span class="section-number-3">5.3</span> ido </h3>
+<div class="outline-text-3" id="text-5_3">
+
+<p>Help emacs cope with my inability to type by putting ido everywhere.
+</p>
+<p>
+This seems to be causing stuff to mess up
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">ido()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;</span><span style="color: #b22222;">(defvar ido-enable-replace-completing-read t)
+</span><span style="color: #b22222;">; </span><span style="color: #b22222;">
+</span><span style="color: #b22222;">;</span><span style="color: #b22222;">(defadvice completing-read (around use-ido-when-possible activate)
+</span><span style="color: #b22222;">;  </span><span style="color: #b22222;">(if (or (not ido-enable-replace-completing-read) ; Manual override disable ido
+</span><span style="color: #b22222;">;          </span><span style="color: #b22222;">(and (boundp 'ido-cur-list)
+</span><span style="color: #b22222;">;               </span><span style="color: #b22222;">ido-cur-list)) ; Avoid infinite loop from ido calling this
+</span><span style="color: #b22222;">;      </span><span style="color: #b22222;">ad-do-it
+</span><span style="color: #b22222;">;    </span><span style="color: #b22222;">(let ((allcomp (all-completions "" collection predicate)))
+</span><span style="color: #b22222;">;      </span><span style="color: #b22222;">(if allcomp
+</span><span style="color: #b22222;">;          </span><span style="color: #b22222;">(setq ad-return-value
+</span><span style="color: #b22222;">;                </span><span style="color: #b22222;">(ido-completing-read prompt allcomp
+</span><span style="color: #b22222;">;                                     </span><span style="color: #b22222;">nil require-match initial-input hist def))
+</span><span style="color: #b22222;">;        </span><span style="color: #b22222;">ad-do-it))))
+</span></pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_4" class="outline-3">
+<h3 id="sec-5_4"><span class="section-number-3">5.4</span> latex </h3>
+<div class="outline-text-3" id="text-5_4">
+
+
+
+
+<div class="org-src-container"><label class="org-src-name">latex()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;;</span><span style="color: #b22222;">set xetex mode in tex/latex
+</span>(add-hook 'LaTeX-mode-hook (<span style="color: #a020f0;">lambda</span>()
+                             (add-to-list 'TeX-command-list '(<span style="color: #8b2252;">"XeLaTeX"</span> <span style="color: #8b2252;">"%`xelatex%(mode)%' %t"</span> TeX-run-TeX nil t))
+                             (setq TeX-command-default <span style="color: #8b2252;">"XeLaTeX"</span>)
+                             (setq TeX-save-query nil)
+                             (setq TeX-show-compilation t)
+                             ))
+
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_5" class="outline-3">
+<h3 id="sec-5_5"><span class="section-number-3">5.5</span> mingus </h3>
+<div class="outline-text-3" id="text-5_5">
+
+<p>Mingus is a great music player.
+</p>
+
+
+<div class="org-src-container"><label class="org-src-name">mingus()</label><pre class="src src-emacs-lisp">
+(<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">mingus</span>)
+</pre></div>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_6" class="outline-3">
+<h3 id="sec-5_6"><span class="section-number-3">5.6</span> twittering-mode </h3>
+<div class="outline-text-3" id="text-5_6">
+
+<p>Sometimes I like to tweet
+</p>
+
+
+<div class="org-src-container"><label class="org-src-name">mingus()</label><pre class="src src-emacs-lisp">
+(<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">twittering-mode</span>)
+(setq twittering-use-master-password t)
+</pre></div>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5_7" class="outline-3">
+<h3 id="sec-5_7"><span class="section-number-3">5.7</span> tramp </h3>
+<div class="outline-text-3" id="text-5_7">
+
+
+<p>
+I do a lot of editing of files over SSH as root. That's right. I live dangerously.
+</p>
+
+
+
+<div class="org-src-container"><label class="org-src-name">tramp()</label><pre class="src src-emacs-lisp">
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">For tramp to edit using sudo over ssh like:
+</span><span style="color: #b22222;">;; </span><span style="color: #b22222;">C-x C-f /sudo:hostname.domain:/etc/hosts
+</span>(<span style="color: #a020f0;">require</span> '<span style="color: #008b8b;">tramp</span>)
+(add-to-list 'tramp-default-proxies-alist
+             '(nil <span style="color: #8b2252;">"\\`root\\'"</span> <span style="color: #8b2252;">"/ssh:%h:"</span>))
+(add-to-list 'tramp-default-proxies-alist
+             '((regexp-quote (system-name)) nil nil))
+</pre></div>
+
+
+</div>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: David Rocamora
+</p>
+<p class="date"> Date: 2011-08-24 08:53:26 EDT</p>
+<p class="creator">HTML generated by org-mode TAG=7.01g in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
