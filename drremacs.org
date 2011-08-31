@@ -49,14 +49,15 @@ I am sort of picky about how things look and I have yet to find an emacs theme t
 
 #+srcname: appearance
 #+begin_src emacs-lisp 
-;; A slick theme
-;; (require 'color-theme-github)
-
-;; Tool bar no, menu bar yes
-(menu-bar-mode 1)
-
-;; system font
-(setq font-use-system-font 1)
+  ;; A slick theme
+  (load-file "~/.emacs.d/elisp/almost-monokai/color-theme-almost-monokai.el")
+  (color-theme-almost-monokai)
+  
+  ;; Tool bar no, menu bar yes
+  (menu-bar-mode 1)
+  
+  ;; system font
+  (setq font-use-system-font 1)
 #+end_src
 
 ** Behavior
@@ -103,19 +104,12 @@ I hate all those ~s getting mixed in with my files, but I need backups. Here's m
 
 ** Custom set variables
 
-Based on the warning, the world will probably end because this is in an org file.
+I decided it was better to store this in it's own file so that customize won't freak out
 
 #+srcname: custom-set-variables
 #+begin_src emacs-lisp 
-  (custom-set-variables
-    ;; custom-set-variables was added by Custom.
-    ;; If you edit it by hand, you could mess it up, so be careful.
-    ;; Your init file should contain only one such instance.
-    ;; If there is more than one, they won't work right.
-   '(org-agenda-custom-commands (quote (("d" todo "DELEGATED" nil) ("c" todo "DONE" nil) ("h" todo "HOLD" nil) ("W" agenda "" ((org-agenda-ndays 21))) ("A" agenda "" ((org-agenda-skip-function (lambda nil (org-agenda-skip-entry-if (quote notregexp) "\\=.*\\[#A\\]"))) (org-agenda-ndays 1) (org-agenda-overriding-header "Today's Priority #A tasks: "))) ("u" alltodo "" ((org-agenda-skip-function (lambda nil (org-agenda-skip-entry-if (quote scheduled) (quote deadline) (quote regexp) "<[^>
-  ]+>"))) (org-agenda-overriding-header "Unscheduled TODO entries: "))))))
-   '(org-agenda-files (quote ("~/Documents/org/todo.org")))
-   '(org-default-notes-file "~/Documents/org/notes.org"))
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
 #+end_src
 
 * Mail
@@ -123,16 +117,24 @@ This probably doesn't need it's own section, but it has one
 
 #+srcname: mail
 #+begin_src emacs-lisp
-
-;; We need a spell checker
-(add-hook 'message-mode-hook 'flyspell-mode)
-
-;; Sign messages by default.
-(add-hook 'message-setup-hook 'mml-secure-sign-pgpmime)
-
-(require 'notmuch-address)
-(setq notmuch-address-command "~/bin/addrlookup")
-(notmuch-address-message-insinuate)
+  ;; We need a spell checker
+  (add-hook 'message-mode-hook 'flyspell-mode)
+  
+  ;; Sign messages by default.
+  (add-hook 'message-setup-hook 'mml-secure-sign-pgpmime)
+  
+  (require 'notmuch-address)
+  (setq notmuch-address-command "~/bin/addrlookup")
+  (notmuch-address-message-insinuate)
+  
+  ;; I'm using msmtp to send my mail now
+  (setq message-send-mail-function 'message-send-mail-with-sendmail)
+  (setq sendmail-program "/usr/bin/msmtp"
+        mail-specify-envelope-from t
+  ;; needed for debians message.el cf. README.Debian.gz 
+        message-sendmail-f-is-evil nil                
+        mail-envelope-from 'header
+        message-sendmail-envelope-from 'header)
 #+end_src
 
 * Modes
@@ -317,8 +319,6 @@ Sometimes I like to tweet
   (require 'twittering-mode)
   (setq twittering-use-master-password t)
 #+end_src
-
-
 ** tramp
 
 I do a lot of editing of files over SSH as root. That's right. I live dangerously.
@@ -333,3 +333,32 @@ I do a lot of editing of files over SSH as root. That's right. I live dangerousl
 (add-to-list 'tramp-default-proxies-alist
 	     '((regexp-quote (system-name)) nil nil))
 #+end_src
+** eshell
+I want to like the eshell, but it never seems to work out for me. 
+
+#+begin_src emacs-lisp
+  ;; plan9 smartshell alike
+  (require 'eshell)
+  (require 'em-smart)
+  (setq eshell-where-to-jump 'begin)
+  (setq eshell-review-quick-commands nil)
+  (setq eshell-smart-space-goes-to-end t)
+  
+  ;; Some settings re history, completions, and getting to the bottom of the buffer
+  (setq eshell-save-history-on-exit t
+        eshell-history-size 4096
+        eshell-hist-ignoredups t
+        eshell-cmpl-cycle-completions nil)
+  
+  
+  ;; use ansi-term for these commands
+  (add-hook
+   'eshell-first-time-mode-hook
+   (lambda ()
+     (setq
+      eshell-visual-commands
+      (append
+       '("getmymail" "vim" "screen" "lftp" "ipython" "telnet" "ssh" "top")
+       eshell-visual-commands))))
+#+end_src
+: 

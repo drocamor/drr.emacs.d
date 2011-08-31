@@ -1,3 +1,4 @@
 drremacs.el
 auto-save-list/*
 backups/*
+tramp
