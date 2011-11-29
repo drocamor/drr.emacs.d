@@ -1,1 +1,4 @@
 This is the contents of my ~/.emacs.d (with some things removed...). Mostly it's a backup for myself, but maybe it can provide some inspiration to others. 
+
+
+I wanted to see what it would be like if I edited a file using github...
