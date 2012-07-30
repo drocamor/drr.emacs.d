@@ -1,9 +1,0 @@
-[submodule "elisp/mingus"]
-	path = elisp/mingus
-	url = git://github.com/pft/mingus.git
-[submodule "elisp/twittering-mode"]
-	path = elisp/twittering-mode
-	url = git://github.com/hayamiz/twittering-mode.git
-[submodule "elisp/almost-monokai"]
-	path = elisp/almost-monokai
-	url = https://github.com/lut4rp/almost-monokai
