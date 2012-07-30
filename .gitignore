@@ -2,3 +2,5 @@ drremacs.el
 auto-save-list/*
 backups/*
 tramp
+elpa
+swank
