@@ -3,16 +3,22 @@
 ;;; interfacing with ELPA, the package archive.
 ;;; Move this code earlier if you want to reference
 ;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (add-to-list 'package-archives 
-	       '("marmalade" .
-		 "http://marmalade-repo.org/packages/"))
-  (package-initialize))
+;; (when
+;;     (load
+;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
+;;   (add-to-list 'package-archives 
+;;  	       '("marmalade" .
+;;  		 "http://marmalade-repo.org/packages/"))
+;;   (package-initialize))
+;;  
+;; (require 'color-theme)
+;; (color-theme-molokai)
+(setenv "PATH" (concat "/Users/drocamor/bin" path-separator (getenv "PATH")))
 
-(require 'color-theme)
-(color-theme-monokai)
+;; spaces over tabs
+
+
+
 
 ;; Sanity settings
 (setq inhibit-startup-message t
@@ -23,6 +29,9 @@
       kept-new-versions 6
       kept-old-versions 2
       version-control t
+      c-basic-indent 2
+      tab-width 4
+      indent-tabs-mode nil
       custom-file "~/.emacs.d/custom.el")
 
 (load custom-file)
